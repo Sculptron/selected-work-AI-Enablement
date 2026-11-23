@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Straightforward update",
+    "article": {
+      "P1": "Use this procedure when a recording appears to be missing from the timeline.",
+      "P2": "Escalate missing footage immediately."
+    },
+    "sources": {
+      "N1": "When footage appears to be missing, first confirm the selected camera and time range.",
+      "N2": "If the gap persists after those checks, record the affected interval and send the issue through the designated escalation path."
+    },
+    "suggestion": {
+      "target": "P2",
+      "wording": "First confirm the selected camera and time range. If the gap persists after those checks, record the affected interval and send the issue through the designated escalation path.",
+      "citations": [
+        {
+          "id": "N1",
+          "quote": "When footage appears to be missing, first confirm the selected camera and time range."
+        },
+        {
+          "id": "N2",
+          "quote": "If the gap persists after those checks, record the affected interval and send the issue through the designated escalation path."
+        }
+      ],
+      "question": null
+    },
+    "model": "claude-sonnet-4-6",
+    "runId": "msg_011ChKRkLfodH59o1vvQYTiF"
+  },
+  {
+    "name": "Conflicting instructions",
+    "article": {
+      "P1": "Use this procedure when a recording appears to be missing from the timeline.",
+      "P2": "Follow the missing-footage escalation procedure."
+    },
+    "sources": {
+      "N1": "For a missing recording, escalate immediately before checking the camera or time range.",
+      "N2": "For a missing recording, check the camera and time range first. Escalate only if the gap persists."
+    },
+    "suggestion": {
+      "target": "P2",
+      "wording": "Follow the missing-footage escalation procedure.",
+      "citations": [
+        {
+          "id": "N1",
+          "quote": "For a missing recording, escalate immediately before checking the camera or time range."
+        },
+        {
+          "id": "N2",
+          "quote": "For a missing recording, check the camera and time range first. Escalate only if the gap persists."
+        }
+      ],
+      "question": "Should agents escalate immediately before any local checks (N1), or should they check the camera and time range first and escalate only if the gap persists (N2)? Please confirm the intended sequence so P2 can be updated accordingly."
+    },
+    "model": "claude-sonnet-4-6",
+    "runId": "msg_011ChKRkU1LQY4dCc4K6nNkj"
+  }
+]

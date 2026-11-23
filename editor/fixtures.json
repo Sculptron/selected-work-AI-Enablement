@@ -1,0 +1,12 @@
+[
+  {
+    "name":"Straightforward update",
+    "article":{"P1":"Use this procedure when a recording appears to be missing from the timeline.","P2":"Escalate missing footage immediately."},
+    "sources":{"N1":"When footage appears to be missing, first confirm the selected camera and time range.","N2":"If the gap persists after those checks, record the affected interval and send the issue through the designated escalation path."}
+  },
+  {
+    "name":"Conflicting instructions",
+    "article":{"P1":"Use this procedure when a recording appears to be missing from the timeline.","P2":"Follow the missing-footage escalation procedure."},
+    "sources":{"N1":"For a missing recording, escalate immediately before checking the camera or time range.","N2":"For a missing recording, check the camera and time range first. Escalate only if the gap persists."}
+  }
+]

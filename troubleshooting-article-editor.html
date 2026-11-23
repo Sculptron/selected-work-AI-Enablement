@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI-Assisted Troubleshooting Article Editor | Saadman Firoz</title>
+<link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./editor/editor.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><header><a href="./index.html">← Selected work</a><span>Saadman Firoz</span></header>
+<main id="main"><p class="label">Support reviewer exercise</p><h1>AI-Assisted Troubleshooting Article Editor</h1>
+<p>You’re reviewing an update to the missing-footage article. Compare the wording with the two approved notes and decide what belongs in the draft.</p>
+<div class="tools"><a class="primary" href="#suggestion">Review the first suggestion</a><label>Fictional case <select id="cases" aria-label="Fictional case"></select></label></div>
+<section id="suggestion" tabindex="-1"><p class="label" id="origin"></p><h2>Review the proposed change</h2>
+<div class="compare"><div><h3>Current wording</h3><small id="target"></small><p id="current"></p></div>
+<div><h3>Proposed wording</h3><small id="version"></small><p id="proposed"></p></div>
+<div><h3>Approved evidence</h3><div id="quotes"></div></div></div>
+<details><summary>Inspect full article and approved notes</summary><dl id="original"></dl></details>
+<p id="warning" role="status"></p>
+<div class="tools"><button id="accept" class="primary">Accept</button><button id="edit">Edit wording</button><button id="reject">Reject</button><button id="flag">Flag for clarification</button></div>
+<form id="change" hidden><label for="entry" id="prompt"></label><textarea id="entry" rows="4" required></textarea><button id="confirm" class="primary"></button> <button type="button" id="cancel">Cancel</button></form>
+<p id="feedback" role="status"></p>
+</section>
+<section><h2>Revised draft</h2><p class="label">Missing footage on the timeline</p><div id="draft"></div>
+<p id="question"></p><h3>Decision log</h3><ol id="log"></ol><button id="copy">Copy draft and decision log</button> <span id="copied" role="status"></span></section>
+<section><h2>Implementation and test results</h2><p>The two recorded cases use Claude to suggest one paragraph replacement from two approved fictional notes. Code checks paragraph IDs and exact quotations. You decide whether the evidence supports the wording. Decisions stay in this tab until you reload.</p>
+<table><thead><tr><th>Check</th><th>Result</th></tr></thead><tbody><tr><td>Compatible notes</td><td>The suggested edit retained the camera and time checks, the affected interval and conditional escalation.</td></tr>
+<tr><td>Conflicting notes</td><td>Both timing instructions were cited. The review opened with a clarification question and the original paragraph intact.</td></tr>
+<tr><td>Training exercise</td><td>Rejecting kept the original paragraph. Editing required a separate confirmation before the revision appeared.</td></tr>
+<tr><td>Evidence validation</td><td>An unknown paragraph, missing note or altered quote blocked acceptance.</td></tr></tbody></table>
+<p><a href="https://github.com/Sculptron/selected-work-AI-Enablement/tree/main/editor">Source code and local model command →</a></p></section></main>
+<script type="module" src="./editor/app.mjs"></script></body></html>

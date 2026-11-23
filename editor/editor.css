@@ -1,0 +1,21 @@
+body {width:min(100% - 2.5rem,66rem)}
+main {padding-top:2rem}
+h1 {font-size:clamp(2.2rem,5vw,3.6rem);max-width:25ch}
+main>p {max-width:70ch}
+.compare {display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:1rem;margin:1rem 0}
+.compare>div {padding:1rem;background:white;border:1px solid var(--line);border-radius:.35rem}
+.compare h3 {margin:0 0 .8rem}
+small,.label {color:var(--teal);font-weight:700}
+.tools {display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+button,select,textarea,.primary {font:inherit;border:1px solid #738882;border-radius:.35rem;padding:.4rem .8rem;background:white;color:var(--ink)}
+button:not(:disabled),summary {cursor:pointer}
+.primary {background:var(--teal);color:white;font-weight:650;text-decoration:none}
+button:disabled {opacity:.5;cursor:default}
+:focus-visible {outline:3px solid var(--teal);outline-offset:3px}
+label,dt {font-weight:650}
+textarea {width:100%;display:block;margin:.5rem 0}
+select {max-width:100%}dd {margin:0 0 .7rem}
+form,#feedback:not(:empty),#question:not(:empty) {background:#edf3f1;padding:.8rem 1rem;margin:.8rem 0}
+td,th {text-align:left;padding:.5rem;vertical-align:top;border-bottom:1px solid var(--line)}
+#draft {white-space:pre-wrap;max-width:68ch}
+@media(max-width:720px){.compare{grid-template-columns:1fr}.tools label,select{display:block}}

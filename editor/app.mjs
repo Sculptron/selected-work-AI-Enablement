@@ -26,7 +26,7 @@ async function start(){
     for(const e of s.citations??[])$('quotes').append(node('small',e.id),node('p',e.quote));
     $('original').replaceChildren();
     for(const [id,value] of Object.entries({...c.article,...c.sources}))$('original').append(node('dt',id),node('dd',value));
-    $('warning').textContent=issues.join(' ')||s.question||'';
+    $('warning').textContent=issues.join(' ')||(s.question && d.question)||'';
     $('accept').disabled=!!(issues.length||s.question||d.status==='Accepted');
     $('edit').disabled=!!(issues.length||s.question);
     $('flag').disabled=false;$('reject').disabled=false;
@@ -39,13 +39,20 @@ async function start(){
   }
   function decide(status,text,edited=false,question=null){
     if(status==='Accepted' && (errors(current(),current().suggestion).length||current().suggestion.question||!text.trim()))return;
+    if(status==='Accepted' && current()===training && /\bmissing\s+recordings\s+will\s+automatically\s+return\b/i.test(text)){
+      status='Needs correction';
+    }
     const d=state();Object.assign(d,{status,text,edited,question});
     const entry=current().suggestion.target+' · '+status+(edited?' · reviewer-edited':'')+(status==='Accepted'?' · '+text:'')+(question?' · '+question:'');
     d.history.push(entry);render();
   }
   $('cases').onchange=()=>{selected=Number($('cases').value);render()};
+  $('recorded').onclick=()=>{
+    selected=cases.findIndex(c=>c.name==='Straightforward update');
+    $('cases').value=String(selected);render();$('suggestion').focus();
+  };
   $('accept').onclick=()=>decide('Accepted',state().text??current().suggestion.wording,state().edited);
-  $('reject').onclick=()=>decide('Rejected',undefined,false,current().suggestion.question);
+  $('reject').onclick=()=>decide('Rejected',undefined,false,current().suggestion.question ? state().question ?? current().suggestion.question : null);
   function openForm(action){
     for(const id of ['accept','edit','reject','flag'])$(id).disabled=true;
     mode=action;$('change').hidden=false;const edit=mode==='edit';

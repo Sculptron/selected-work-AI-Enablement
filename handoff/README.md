@@ -20,3 +20,5 @@ Capture reads only fixtures.json and replaces runs.json after all three requests
 ## Review contract
 
 Each line ID combines its source and its original 1-based line number, including blank lines. The checker requires a recognized status, summary, and an exact excerpt from an existing line. A disagreement needs evidence from different sources. An open or unknown item needs an owner and next action. The reviewer checks whether the quotes actually support each conclusion. Text matching alone cannot establish that. A reviewer-entered owner is labelled in the handoff. Approval preserves all finding statuses and citations.
+
+A disagreement needs its own follow-up owner and action, or an explicit reference to one open or unknown finding with a shared source line. For the original C-24 recording, the review layer supplies that reference and separates the next action from historical ownership. The original model response is preserved in runs.json.

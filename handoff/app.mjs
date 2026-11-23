@@ -1,4 +1,4 @@
-import {keys,known,lines,problems,approvedText} from './rules.mjs';
+import {keys,known,lines,forReview,linkedFollowUp,problems,approvedText} from './rules.mjs';
 const $=id=>document.getElementById(id);
 const el=(tag,text)=>{const e=document.createElement(tag);e.textContent=text;return e};
 const names={installer:'Installer note',checklist:'Commissioning checklist',update:'Project update'};
@@ -12,7 +12,8 @@ function gate(){
   if(!$('reviewed').checked)errors.push('Confirm you checked the evidence.');
   $('approve').disabled=!!errors.length;$('gate').textContent=errors.join(' ')||'Ready to approve for Support.';
 }
-function render(run,local=false){
+function render(recording,local=false){
+  const run=forReview(recording);
   revision++;current=run;owners={};$('reviewed').checked=false;
   $('mode').textContent=local?'Local model run':'Recorded AI run';
   $('message').textContent=run.name+' · '+run.model;
@@ -30,7 +31,9 @@ function render(run,local=false){
     const row=el('article','');row.className='finding';
     const body=el('div',''), evidence=el('div','');row.append(body,evidence);
     body.append(el('small',f.status),el('h3',f.summary));
-    if(['Open','Unknown'].includes(f.status)){
+    if(linkedFollowUp(run.report,f)){
+      body.append(el('p','Follow-up: '+f.followUpId));
+    }else if(f.status!=='Verified'){
       body.append(el('p','Next action: '+(f.action||'Unknown')));
       if(known(f.owner))body.append(el('p','Owner: '+f.owner));
       else{

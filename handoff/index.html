@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deployment-to-Support Handoff Checker | Saadman Firoz</title>
+<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="./checker.css"></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header><a href="../index.html" id="portfolio">← Selected work</a><span>Saadman Firoz</span></header>
+<main id="main"><p class="label" id="mode">Recorded AI run</p><h1>Deployment-to-Support Handoff Checker</h1>
+<p>Review the findings against the original notes, assign any missing owner, then approve the handoff for Support.</p>
+<label for="cases">Fictional deployment</label> <select id="cases"></select>
+<details id="custom" hidden><summary>Paste three sources for a live run</summary>
+<form id="form"><p>The local runner sends these notes to the configured model provider.</p>
+<label>Installer note<textarea id="installer"></textarea></label><label>Commissioning checklist<textarea id="checklist"></textarea></label><label>Project update<textarea id="update"></textarea></label><button>Extract handoff</button></form></details>
+<p id="message" role="status"></p>
+<details id="sources"><summary>Inspect original sources</summary><div id="original"></div></details>
+<section><h2>Review findings</h2><div id="findings"></div></section>
+<section><h2>Approval</h2><p>Approval releases the summary to Support. Every open or unknown item keeps its status and needs an owner and next action.</p>
+<label><input type="checkbox" id="reviewed"> I checked the findings against their sources.</label>
+<p id="gate" role="status"></p><button id="approve" disabled>Approve handoff</button> <button id="copy" disabled>Copy approved handoff</button>
+<pre id="output" hidden></pre></section>
+<section><h2>Test results</h2><table><thead><tr><th>Case</th><th>Observed result</th></tr></thead><tbody>
+<tr><td>Conflicting report</td><td>23 of 24 verified. Approval blocked until an owner was supplied and the findings reviewed. C-24 stayed open after approval.</td></tr>
+<tr><td>Completed checks</td><td>Both recording checks verified. No disagreement or missing owner blocked approval.</td></tr>
+<tr><td>Missing evidence</td><td>B-01 installation verified. Recording result remained unknown, with a named owner to obtain the record.</td></tr>
+<tr><td>Validation checks</td><td>A nonexistent line, a changed quotation and a missing next action each blocked approval.</td></tr>
+</tbody></table><p><a href="https://github.com/Sculptron/selected-work-AI-Enablement/tree/main/handoff">Source code, tests and local runner instructions →</a></p></section>
+</main><script type="module" src="./app.mjs"></script></body></html>

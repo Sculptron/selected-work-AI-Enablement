@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Conflicting completion report",
+    "sources": {
+      "installer": "C-24 still needs a recording check.\nFollow-up owner: unassigned.",
+      "checklist": "24 cameras installed; 23 passed their recording checks.\nC-24 recording check: not performed. Open task: run and document the C-24 recording check.",
+      "update": "Commissioning is complete. All 24 cameras passed their recording checks."
+    },
+    "model": "claude-sonnet-4-6",
+    "runId": "msg_011ChKQcWGRSSYwKSCbuAoT5",
+    "report": {
+      "findings": [
+        {
+          "status": "Verified",
+          "summary": "23 cameras passed their recording checks as directly documented on the checklist.",
+          "cites": [
+            {
+              "id": "checklist-1",
+              "quote": "24 cameras installed; 23 passed their recording checks."
+            }
+          ],
+          "owner": null,
+          "action": null
+        },
+        {
+          "status": "Disagreement",
+          "summary": "update-1 claims all 24 cameras passed their recording checks and commissioning is complete, but checklist-1 documents only 23 passed and checklist-2 explicitly states the C-24 recording check was not performed. The two sources directly conflict on whether C-24 has a verified passing result.",
+          "cites": [
+            {
+              "id": "update-1",
+              "quote": "Commissioning is complete. All 24 cameras passed their recording checks."
+            },
+            {
+              "id": "checklist-1",
+              "quote": "23 passed their recording checks."
+            },
+            {
+              "id": "checklist-2",
+              "quote": "C-24 recording check: not performed."
+            }
+          ],
+          "owner": null,
+          "action": null
+        },
+        {
+          "status": "Open",
+          "summary": "The C-24 recording check was explicitly not performed and remains an open task requiring execution and documentation.",
+          "cites": [
+            {
+              "id": "checklist-2",
+              "quote": "C-24 recording check: not performed. Open task: run and document the C-24 recording check."
+            },
+            {
+              "id": "installer-1",
+              "quote": "C-24 still needs a recording check."
+            }
+          ],
+          "owner": null,
+          "action": "Run and document the C-24 recording check; the follow-up owner is unassigned per installer-2."
+        }
+      ]
+    }
+  },
+  {
+    "name": "Completed checks",
+    "sources": {
+      "installer": "Installation complete for cameras A-01 and A-02.",
+      "checklist": "A-01 and A-02: recording checks performed and passed for both cameras.",
+      "update": "Both installed cameras passed their recording checks. No outstanding work."
+    },
+    "model": "claude-sonnet-4-6",
+    "runId": "msg_011ChKQcWGfs7PqNhpaUELPs",
+    "report": {
+      "findings": [
+        {
+          "status": "Verified",
+          "summary": "Recording checks performed and passed for cameras A-01 and A-02.",
+          "cites": [
+            {
+              "id": "checklist-1",
+              "quote": "A-01 and A-02: recording checks performed and passed for both cameras."
+            }
+          ],
+          "owner": null,
+          "action": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "Missing recording evidence",
+    "sources": {
+      "installer": "B-01 installed. Casey Vale will obtain the recording test record.",
+      "checklist": "B-01 installation checked. Recording result field is blank.",
+      "update": "B-01 installation reported complete."
+    },
+    "model": "claude-sonnet-4-6",
+    "runId": "msg_011ChKQcWFg4sQ2WRRp9UTLv",
+    "report": {
+      "findings": [
+        {
+          "status": "Verified",
+          "summary": "B-01 installation has been checked on the checklist.",
+          "cites": [
+            {
+              "id": "checklist-1",
+              "quote": "B-01 installation checked."
+            }
+          ],
+          "owner": null,
+          "action": null
+        },
+        {
+          "status": "Unknown",
+          "summary": "B-01 recording test result is missing; the result field on the checklist is blank.",
+          "cites": [
+            {
+              "id": "checklist-1",
+              "quote": "Recording result field is blank."
+            }
+          ],
+          "owner": "Casey Vale",
+          "action": "Casey Vale must obtain and record the B-01 recording test result on the checklist."
+        }
+      ]
+    }
+  }
+]

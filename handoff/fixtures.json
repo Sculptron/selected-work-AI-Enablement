@@ -1,0 +1,5 @@
+[
+  {"name":"Conflicting completion report","sources":{"installer":"C-24 still needs a recording check.\nFollow-up owner: unassigned.","checklist":"24 cameras installed; 23 passed their recording checks.\nC-24 recording check: not performed. Open task: run and document the C-24 recording check.","update":"Commissioning is complete. All 24 cameras passed their recording checks."}},
+  {"name":"Completed checks","sources":{"installer":"Installation complete for cameras A-01 and A-02.","checklist":"A-01 and A-02: recording checks performed and passed for both cameras.","update":"Both installed cameras passed their recording checks. No outstanding work."}},
+  {"name":"Missing recording evidence","sources":{"installer":"B-01 installed. Casey Vale will obtain the recording test record.","checklist":"B-01 installation checked. Recording result field is blank.","update":"B-01 installation reported complete."}}
+]

@@ -1,0 +1,22 @@
+body {width:min(100% - 2.5rem,58rem)}
+main {padding-top:2rem}
+h1 {font-size:clamp(2rem,5vw,3.25rem)}
+button,select,input,textarea {font:inherit;color:inherit}
+button,select,.owner,textarea {border:1px solid #627773;border-radius:.35rem;background:white;padding:.45rem .7rem;max-width:100%}
+button:not(:disabled),summary {cursor:pointer}
+button:not(:disabled) {background:#12635f;color:white}
+button:disabled {opacity:.68}
+:focus-visible {outline:3px solid #12635f;outline-offset:2px}
+details {padding:.8rem 0}
+summary,label {font-weight:650}
+textarea, .owner {display:block;width:100%}
+textarea {min-height:5rem}
+.finding {padding:1.2rem 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.finding h3 {font-size:1.05rem;line-height:1.45;margin:0}
+.finding p {margin:.45rem 0}
+blockquote {margin:.3rem 0;padding:.5rem .8rem;font-size:.95rem}
+small {display:block;font-weight:650;color:var(--teal)}
+pre {white-space:pre-wrap;overflow-wrap:anywhere;background:#edf3f1;padding:1rem;font:inherit}
+th,td {text-align:left;vertical-align:top;padding:.6rem;border-bottom:1px solid var(--line)}
+table {border-collapse:collapse}
+@media(max-width:640px){.finding{grid-template-columns:1fr;gap:.4rem}select{display:block}button{margin-bottom:.5rem}}
